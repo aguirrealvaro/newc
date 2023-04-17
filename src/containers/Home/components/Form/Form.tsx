@@ -50,6 +50,8 @@ export const Form: FunctionComponent = () => {
     console.log(fields);
   };
 
+  console.log(process.env.API_HOST);
+
   const isSSNValid = fields.ssn ? RegExp(SSN_REG_EXP).test(fields.ssn) : false;
 
   const isFormValid: boolean =
