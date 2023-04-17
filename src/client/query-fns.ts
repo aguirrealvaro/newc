@@ -6,7 +6,7 @@ export const getMembers = (): Promise<GetMembersResponseI> => {
 };
 
 export const postMember = (body: MemberI): Promise<MemberI> => {
-  return fetcher("auth/login", {
+  return fetcher("members", {
     method: "POST",
     body: JSON.stringify(body),
   });

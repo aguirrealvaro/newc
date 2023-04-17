@@ -1,5 +1,8 @@
 import { FunctionComponent } from "react";
+import { useMutation } from "react-query";
 import styled from "styled-components";
+import { postMember } from "@/client";
+import { MemberI } from "@/client/interfaces";
 import { Button, Input } from "@/components";
 import { SSN_REG_EXP } from "@/constants";
 import { useForm } from "@/hooks";
@@ -46,11 +49,18 @@ export const Form: FunctionComponent = () => {
     },
   });
 
-  const onSubmit = () => {
-    console.log(fields);
-  };
+  const postMemberMutation = useMutation(postMember);
 
-  console.log(process.env.API_HOST);
+  const onSubmit = () => {
+    const trimmedFields: MemberI = {
+      firstName: fields.firstName.trim(),
+      lastName: fields.lastName.trim(),
+      address: fields.address.trim(),
+      ssn: fields.ssn,
+    };
+
+    postMemberMutation.mutate(trimmedFields);
+  };
 
   const isSSNValid = fields.ssn ? RegExp(SSN_REG_EXP).test(fields.ssn) : false;
 
