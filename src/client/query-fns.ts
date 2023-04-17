@@ -1,6 +1,6 @@
 import { fetcher } from "./fetcher";
-import { GetUsersResponseI } from "./interfaces";
+import { GetMembersResponseI } from "./interfaces";
 
-export const getUsers = (): Promise<GetUsersResponseI> => {
+export const getMembers = (): Promise<GetMembersResponseI> => {
   return fetcher("members");
 };

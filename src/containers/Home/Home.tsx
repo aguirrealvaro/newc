@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Form, UsersTable } from "./components";
+import { Form, MembersTable } from "./components";
 import { Wrapper } from "@/css";
 
 export const Home: FunctionComponent = () => {
@@ -9,7 +9,7 @@ export const Home: FunctionComponent = () => {
       <Wrapper>
         <InnerContainer>
           <Form />
-          <UsersTable />
+          <MembersTable />
         </InnerContainer>
       </Wrapper>
     </Container>

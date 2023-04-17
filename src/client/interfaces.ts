@@ -1,8 +1,8 @@
-interface UserI {
+interface MemberI {
   firstName: string;
   lastName: string;
   address: string;
   ssn: string;
 }
 
-export type GetUsersResponseI = UserI[];
+export type GetMembersResponseI = MemberI[];

@@ -1,24 +1,24 @@
 import { FunctionComponent } from "react";
 import { useQuery } from "react-query";
 import styled from "styled-components";
-import { getUsers } from "@/client";
+import { getMembers } from "@/client";
 import { Table } from "@/components";
 
 const COLUMNS = ["First Name", "Last Name", "Address", "SSN"];
 
-export const UsersTable: FunctionComponent = () => {
-  const getUsersQuery = useQuery(["members"], getUsers);
+export const MembersTable: FunctionComponent = () => {
+  const getMembersQuery = useQuery(["members"], getMembers);
 
   const rows =
-    getUsersQuery.data?.map((user) => [
-      user.firstName,
-      user.lastName,
-      user.address,
-      user.ssn,
+    getMembersQuery.data?.map((member) => [
+      member.firstName,
+      member.lastName,
+      member.address,
+      member.ssn,
     ]) || [];
 
   const renderUsers = (): JSX.Element => {
-    if (getUsersQuery.isLoading) {
+    if (getMembersQuery.isLoading) {
       return <div>Loading...</div>;
     }
 
