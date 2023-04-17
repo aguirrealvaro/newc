@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import styled from "styled-components";
-import { postMember } from "@/client";
 import { MemberI } from "@/client/interfaces";
+import { postMember } from "@/client/query-fns";
 import { Button, Input } from "@/components";
 import { SSN_REG_EXP } from "@/constants";
 import { useForm } from "@/hooks";

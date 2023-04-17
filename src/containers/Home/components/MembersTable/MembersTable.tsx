@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { useQuery } from "react-query";
 import styled from "styled-components";
-import { getMembers } from "@/client";
+import { getMembers } from "@/client/query-fns";
 import { Spinner, Table } from "@/components";
 
 const COLUMNS = ["First Name", "Last Name", "Address", "SSN"];
