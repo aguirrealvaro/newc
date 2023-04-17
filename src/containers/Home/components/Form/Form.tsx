@@ -57,6 +57,7 @@ export const Form: FunctionComponent = () => {
     };
 
     postMemberMutation.mutate(trimmedFields);
+    resetFields();
   };
 
   const isSSNValid = fields.ssn ? RegExp(SSN_REG_EXP).test(fields.ssn) : false;

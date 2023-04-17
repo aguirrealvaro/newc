@@ -6,3 +6,9 @@ export interface MemberI {
 }
 
 export type GetMembersResponseI = MemberI[];
+
+export interface UpdateTokenResponse {
+  iat: number;
+  exp: number;
+  token: string;
+}
