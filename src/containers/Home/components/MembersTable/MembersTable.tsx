@@ -36,4 +36,7 @@ export const MembersTable: FunctionComponent = () => {
 
 const Container = styled.div`
   width: 70%;
+  ${({ theme }) => theme.breakpoint("sm")} {
+    width: 100%;
+  }
 `;

@@ -121,6 +121,9 @@ export const Form: FunctionComponent = () => {
 
 const Container = styled.div`
   width: 30%;
+  ${({ theme }) => theme.breakpoint("sm")} {
+    width: 100%;
+  }
 `;
 
 const InputWrapper = styled.div`
