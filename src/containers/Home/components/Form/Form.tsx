@@ -58,8 +58,6 @@ export const Form: FunctionComponent = () => {
     Boolean(fields.address) &&
     isSSNValid;
 
-  console.log(isFormValid);
-
   return (
     <Container>
       <form noValidate onSubmit={(e) => handleSubmit(e, onSubmit)}>
@@ -68,8 +66,8 @@ export const Form: FunctionComponent = () => {
             name="firstName"
             label="First name"
             value={fields.firstName}
-            isError={Boolean(errors?.firstName)}
-            errorMessage={errors?.firstName}
+            //isError={Boolean(errors?.firstName)}
+            //errorMessage={errors?.firstName}
             onChange={handleInputChange}
           />
         </InputWrapper>
@@ -78,8 +76,8 @@ export const Form: FunctionComponent = () => {
             name="lastName"
             label="Last name"
             value={fields.lastName}
-            isError={Boolean(errors?.lastName)}
-            errorMessage={errors?.lastName}
+            //isError={Boolean(errors?.lastName)}
+            //errorMessage={errors?.lastName}
             onChange={handleInputChange}
           />
         </InputWrapper>
@@ -88,8 +86,8 @@ export const Form: FunctionComponent = () => {
             name="address"
             label="Address"
             value={fields.address}
-            isError={Boolean(errors?.address)}
-            errorMessage={errors?.address}
+            //isError={Boolean(errors?.address)}
+            //errorMessage={errors?.address}
             onChange={handleInputChange}
           />
         </InputWrapper>
@@ -98,8 +96,8 @@ export const Form: FunctionComponent = () => {
             name="ssn"
             label="SSN"
             value={fields.ssn}
-            isError={Boolean(errors?.ssn)}
-            errorMessage={errors?.ssn}
+            //isError={Boolean(errors?.ssn)}
+            //errorMessage={errors?.ssn}
             onChange={handleInputChange}
             helpText="Format required: ###-##-#### (numbers)"
           />
