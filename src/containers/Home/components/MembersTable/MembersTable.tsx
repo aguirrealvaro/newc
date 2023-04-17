@@ -7,7 +7,9 @@ import { Spinner, Table } from "@/components";
 const COLUMNS = ["First Name", "Last Name", "Address", "SSN"];
 
 export const MembersTable: FunctionComponent = () => {
-  const getMembersQuery = useQuery(["members"], getMembers);
+  const getMembersQuery = useQuery(["members"], getMembers, {
+    refetchInterval: 2 * 60 * 1000, // two minutes
+  });
 
   const rows =
     getMembersQuery.data?.map((member) => [
