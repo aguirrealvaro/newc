@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import styled from "styled-components";
 import { postMember } from "@/client";
 import { MemberI } from "@/client/interfaces";
@@ -19,7 +19,13 @@ export const Form: FunctionComponent = () => {
     intialValues: { firstName: "", lastName: "", address: "", ssn: "" },
   });
 
-  const postMemberMutation = useMutation(postMember);
+  const postMemberMutation = useMutation(postMember, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("members");
+    },
+  });
+
+  const queryClient = useQueryClient();
 
   const onSubmit = () => {
     const trimmedFields: MemberI = {
