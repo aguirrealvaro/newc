@@ -12,7 +12,7 @@ type Fields = {
 };
 
 export const Form: FunctionComponent = () => {
-  const { fields, errors, handleInputChange, handleSubmit, resetFields } = useForm<Fields>({
+  const { fields, handleInputChange, handleSubmit, resetFields } = useForm<Fields>({
     intialValues: { firstName: "", lastName: "", address: "", ssn: "" },
     validations: {
       firstName: {
