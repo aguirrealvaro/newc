@@ -13,7 +13,7 @@ type Fields = {
 };
 
 export const Form: FunctionComponent = () => {
-  const { fields, errors, handleInputChange, handleSubmit } = useForm<Fields>({
+  const { fields, errors, handleInputChange, handleSubmit, resetFields } = useForm<Fields>({
     intialValues: { firstName: "", lastName: "", address: "", ssn: "" },
     validations: {
       firstName: {
@@ -56,42 +56,46 @@ export const Form: FunctionComponent = () => {
       <form noValidate onSubmit={(e) => handleSubmit(e, onSubmit)}>
         <InputWrapper>
           <Input
-            inputId="first-name"
+            name="firstName"
             label="First name"
             value={fields.firstName}
             isError={Boolean(errors?.firstName)}
             errorMessage={errors?.firstName}
+            onChange={handleInputChange}
           />
         </InputWrapper>
         <InputWrapper>
           <Input
-            inputId="last-name"
+            name="lastName"
             label="Last name"
             value={fields.lastName}
             isError={Boolean(errors?.lastName)}
             errorMessage={errors?.lastName}
+            onChange={handleInputChange}
           />
         </InputWrapper>
         <InputWrapper>
           <Input
-            inputId="address"
+            name="address"
             label="Address"
             value={fields.address}
             isError={Boolean(errors?.address)}
             errorMessage={errors?.address}
+            onChange={handleInputChange}
           />
         </InputWrapper>
         <InputWrapper>
           <Input
-            inputId="ssn"
+            name="ssn"
             label="SSN"
             value={fields.ssn}
             isError={Boolean(errors?.ssn)}
             errorMessage={errors?.ssn}
+            onChange={handleInputChange}
           />
         </InputWrapper>
         <ButtonsContainer>
-          <Button block kind="outlined">
+          <Button block kind="outlined" onClick={resetFields}>
             Reset
           </Button>
           <Button block type="submit">

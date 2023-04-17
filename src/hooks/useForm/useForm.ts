@@ -63,7 +63,10 @@ export const useForm = <T extends Record<keyof T, string>>({
     onSubmit();
   };
 
-  const resetFields = () => setFields(intialValues);
+  const resetFields = () => {
+    setFields(intialValues);
+    setErrors(undefined);
+  };
 
   return { fields, errors, handleInputChange, handleSubmit, resetFields };
 };
