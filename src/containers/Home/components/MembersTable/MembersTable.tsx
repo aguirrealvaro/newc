@@ -19,7 +19,11 @@ export const MembersTable: FunctionComponent = () => {
 
   const renderUsers = (): JSX.Element => {
     if (getMembersQuery.isLoading) {
-      return <div>Loading...</div>;
+      return <span>Loading...</span>;
+    }
+
+    if (getMembersQuery.isError) {
+      return <span>Fetch error</span>;
     }
 
     return <Table columns={COLUMNS} data={rows} />;
