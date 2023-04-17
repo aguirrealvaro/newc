@@ -50,6 +50,16 @@ export const Form: FunctionComponent = () => {
     console.log(fields);
   };
 
+  const isSSNValid = fields.ssn ? RegExp(SSN_REG_EXP).test(fields.ssn) : false;
+
+  const isFormValid: boolean =
+    Boolean(fields.firstName) &&
+    Boolean(fields.lastName) &&
+    Boolean(fields.address) &&
+    isSSNValid;
+
+  console.log(isFormValid);
+
   return (
     <Container>
       <form noValidate onSubmit={(e) => handleSubmit(e, onSubmit)}>
@@ -91,13 +101,14 @@ export const Form: FunctionComponent = () => {
             isError={Boolean(errors?.ssn)}
             errorMessage={errors?.ssn}
             onChange={handleInputChange}
+            helpText="Format required: ###-##-#### (numbers)"
           />
         </InputWrapper>
         <ButtonsContainer>
-          <Button block kind="outlined" onClick={resetFields}>
+          <Button block kind="alternative" onClick={resetFields}>
             Reset
           </Button>
-          <Button block type="submit">
+          <Button block type="submit" disabled={!isFormValid}>
             Save
           </Button>
         </ButtonsContainer>
