@@ -20,8 +20,10 @@ export const Form: FunctionComponent = () => {
   });
 
   const postMemberMutation = useMutation(postMember, {
-    onSuccess: () => {
-      queryClient.invalidateQueries("members");
+    onSuccess: (newMember) => {
+      queryClient.setQueryData<MemberI[]>("members", (oldMembers) => {
+        return oldMembers ? [...oldMembers, newMember] : [newMember];
+      });
     },
   });
 

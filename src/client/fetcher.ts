@@ -6,7 +6,7 @@ export const fetcher = async <T>(
   baseURL = process.env.API_HOST
 ): Promise<T> => {
   const authToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsIm5hbWUiOiJzYXJhaCIsImFkbWluIjpmYWxzZSwiaWF0IjoxNjgxNzY0MDkyLCJleHAiOjE2ODE3NjQ5OTJ9.3v2h_9APaCWELRRqx_N-sTNRZvNozbQqJTQODHpJuhE";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsIm5hbWUiOiJzYXJhaCIsImFkbWluIjpmYWxzZSwiaWF0IjoxNjgxNzY1MjYzLCJleHAiOjE2ODE3NjYxNjN9.Q6tAqkkvj9fAapll-7D3LVq05Cgdgog2Op66JWq5Enc";
 
   const defaultOptions = {
     method: "GET",
