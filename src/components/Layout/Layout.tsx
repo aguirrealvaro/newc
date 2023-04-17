@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import { Navbar } from "@/components";
+import { Navbar, Footer } from "@/components";
 
 export const Layout: FunctionComponent = () => {
   return (
@@ -10,6 +10,7 @@ export const Layout: FunctionComponent = () => {
       <Main>
         <Outlet />
       </Main>
+      <Footer />
     </Container>
   );
 };

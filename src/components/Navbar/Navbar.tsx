@@ -20,10 +20,11 @@ export const Navbar: FunctionComponent = () => {
   );
 };
 
-const Container = styled.nav`
+const Container = styled.header`
   height: 80px;
   display: flex;
   align-items: center;
+  background-color: ${({ theme }) => theme.assets.success};
 `;
 
 const ListContainer = styled.ul`
@@ -34,6 +35,6 @@ const ListContainer = styled.ul`
 
 const ListItem = styled.li`
   a {
-    color: ${({ theme }) => theme.assets.primary};
+    color: ${({ theme }) => theme.colors.white};
   }
 `;

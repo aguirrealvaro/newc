@@ -1,6 +1,7 @@
 export { Router } from "./Router";
 export { Layout } from "./Layout";
 export { Navbar } from "./Navbar";
+export { Footer } from "./Footer";
 export { Button } from "./Button";
 export { Input } from "./Input";
 export { Table } from "./Table";
