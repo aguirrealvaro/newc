@@ -1,7 +1,8 @@
 import { FunctionComponent } from "react";
+import { Home } from "@/containers";
 
 const App: FunctionComponent = () => {
-  return <h1>Hello world</h1>;
+  return <Home />;
 };
 
 export default App;
