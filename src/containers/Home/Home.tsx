@@ -4,10 +4,15 @@ import styled from "styled-components";
 import { Form, MembersTable } from "./components";
 import { updateToken } from "@/client/query-fns";
 import { Spinner } from "@/components";
+import { AUTH_TOKEN } from "@/constants";
 import { Wrapper } from "@/css";
 
 export const Home: FunctionComponent = () => {
-  const updateTokenMutation = useMutation(updateToken);
+  const updateTokenMutation = useMutation(updateToken, {
+    onSuccess: ({ token }) => {
+      localStorage.setItem(AUTH_TOKEN, token);
+    },
+  });
 
   const { mutate: updateTokenMutate } = updateTokenMutation;
 
