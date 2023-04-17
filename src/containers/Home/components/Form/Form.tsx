@@ -118,7 +118,7 @@ export const Form: FunctionComponent = () => {
 };
 
 const Container = styled.div`
-  width: 50%;
+  width: 30%;
 `;
 
 const InputWrapper = styled.div`

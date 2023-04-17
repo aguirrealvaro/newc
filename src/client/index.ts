@@ -1,1 +1,1 @@
-export * from "./queryFns";
+export * from "./query-fns";

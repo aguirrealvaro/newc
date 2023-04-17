@@ -22,5 +22,5 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.spacing[4]};
+  gap: ${({ theme }) => theme.spacing[8]};
 `;

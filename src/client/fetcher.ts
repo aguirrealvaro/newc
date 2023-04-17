@@ -1,13 +1,12 @@
 /* eslint-disable no-useless-catch */
 
-const AUTH_TOKEN = "auth-token";
-
 export const fetcher = async <T>(
   url: URL | RequestInfo,
   options?: RequestInit,
   baseURL = process.env.API_HOST
 ): Promise<T> => {
-  const authToken = localStorage.getItem(AUTH_TOKEN);
+  const authToken =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsIm5hbWUiOiJzYXJhaCIsImFkbWluIjpmYWxzZSwiaWF0IjoxNjgxNzYyODgwLCJleHAiOjE2ODE3NjM3ODB9.5QSJIZxQUxIEyCFFceQMhsL1vqVKUlcKqc7sayLlI8M";
 
   const defaultOptions = {
     method: "GET",
