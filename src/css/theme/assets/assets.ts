@@ -36,18 +36,6 @@ export const assets: AssetsType = {
   // icon
   icon: colors.grey[9],
 
-  // alert
-  alertPrimaryBg: colors.blue[2],
-  alertPrimaryText: colors.blue[8],
-  alertSuccessBg: colors.green[2],
-  alertSuccessText: colors.green[8],
-  alertWarningBg: colors.yellow[2],
-  alertWarningText: colors.yellow[8],
-  alertDangerBg: colors.red[2],
-  alertDangerText: colors.red[8],
-  alertNeutralBg: colors.grey[3],
-  alertNeutralText: colors.grey[8],
-
   //button
   buttonSolidPrimaryBg: primary,
   buttonSolidPrimaryText: colors.white,
@@ -112,16 +100,4 @@ export const assets: AssetsType = {
   tableRowBgHover: colors.grey[1],
   tableBorder: colors.grey[3],
   tableRowBorder: colors.grey[2],
-
-  //toast
-  toastPrimaryBg: primary,
-  toastPrimaryText: colors.white,
-  toastSuccessBg: success,
-  toastSuccessText: colors.white,
-  toastWarningBg: warning,
-  toastWarningText: colors.white,
-  toastDangerBg: danger,
-  toastDangerText: colors.white,
-  toastNeutralBg: neutral,
-  toastNeutralText: colors.white,
 };

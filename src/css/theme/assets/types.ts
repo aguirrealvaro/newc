@@ -24,18 +24,6 @@ type Assets =
   // icon
   | "icon"
 
-  // alert
-  | "alertPrimaryBg"
-  | "alertPrimaryText"
-  | "alertSuccessBg"
-  | "alertSuccessText"
-  | "alertWarningBg"
-  | "alertWarningText"
-  | "alertDangerBg"
-  | "alertDangerText"
-  | "alertNeutralBg"
-  | "alertNeutralText"
-
   // spinner
   | "spinnerBorder"
   | "spinnerColor"
@@ -95,18 +83,6 @@ type Assets =
   | "tableRowBg"
   | "tableRowBgHover"
   | "tableBorder"
-  | "tableRowBorder"
-
-  // toast
-  | "toastPrimaryBg"
-  | "toastPrimaryText"
-  | "toastSuccessBg"
-  | "toastSuccessText"
-  | "toastWarningBg"
-  | "toastWarningText"
-  | "toastDangerBg"
-  | "toastDangerText"
-  | "toastNeutralBg"
-  | "toastNeutralText";
+  | "tableRowBorder";
 
 export type AssetsType = Record<Assets, string>;
