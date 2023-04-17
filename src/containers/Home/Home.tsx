@@ -5,16 +5,20 @@ import { Wrapper } from "@/css";
 
 export const Home: FunctionComponent = () => {
   return (
-    <div>
+    <Container>
       <Wrapper>
         <InnerContainer>
           <Form />
           <UsersTable />
         </InnerContainer>
       </Wrapper>
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  margin: ${({ theme }) => theme.spacing[12]} 0;
+`;
 
 const InnerContainer = styled.div`
   display: flex;
