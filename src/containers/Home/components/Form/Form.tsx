@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import styled from "styled-components";
 import { MemberI } from "@/client/interfaces";
-import { postMember } from "@/client/query-fns";
+import { getMembers, postMember } from "@/client/query-fns";
 import { Button, Input } from "@/components";
 import { SSN_REG_EXP } from "@/constants";
 import { useForm } from "@/hooks";
@@ -15,8 +15,27 @@ type Fields = {
 };
 
 export const Form: FunctionComponent = () => {
-  const { fields, handleInputChange, handleSubmit, resetFields } = useForm<Fields>({
+  const getMembersQuery = useQuery(["members"], getMembers, {
+    enabled: false,
+  });
+
+  const { fields, handleInputChange, handleSubmit, resetFields, errors } = useForm<Fields>({
     intialValues: { firstName: "", lastName: "", address: "", ssn: "" },
+    validations: {
+      ssn: {
+        custom: {
+          isValid: (value) => {
+            const isRepeatedSSN =
+              getMembersQuery.data?.some((member) => {
+                return member.ssn === value;
+              }) || false;
+
+            return !isRepeatedSSN;
+          },
+          message: "SSN Must be unique",
+        },
+      },
+    },
   });
 
   const postMemberMutation = useMutation(postMember, {
@@ -80,6 +99,8 @@ export const Form: FunctionComponent = () => {
             name="ssn"
             label="SSN"
             value={fields.ssn}
+            isError={Boolean(errors?.ssn)}
+            errorMessage={errors?.ssn}
             onChange={handleInputChange}
             helpText="Format required: ###-##-#### (numbers)"
           />
