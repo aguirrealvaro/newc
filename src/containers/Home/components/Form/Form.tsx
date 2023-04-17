@@ -1,9 +1,8 @@
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Button, Input } from "@/components";
+import { SSN_REG_EXP } from "@/constants";
 import { useForm } from "@/hooks";
-
-export const EMAIL_REG_EXP = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type Fields = {
   firstName: string;
@@ -40,8 +39,8 @@ export const Form: FunctionComponent = () => {
           message: "Required field",
         },
         pattern: {
-          value: EMAIL_REG_EXP,
-          message: "Mail invalido",
+          value: SSN_REG_EXP,
+          message: "Format required: ###-##-####",
         },
       },
     },
