@@ -11,13 +11,7 @@ export const MembersTable: FunctionComponent = () => {
     refetchInterval: 2 * 60 * 1000, // two minutes
   });
 
-  const rows =
-    getMembersQuery.data?.map((member) => [
-      member.firstName,
-      member.lastName,
-      member.address,
-      member.ssn,
-    ]) || [];
+  const rows = getMembersQuery.data?.map((member) => Object.values(member)) || [];
 
   const renderUsers = (): JSX.Element => {
     if (getMembersQuery.isLoading) {
