@@ -74,6 +74,7 @@ export const Form: FunctionComponent = () => {
       <form noValidate onSubmit={(e) => handleSubmit(e, onSubmit)}>
         <InputWrapper>
           <Input
+            inputId="firstName"
             name="firstName"
             label="First name"
             value={fields.firstName}
@@ -82,6 +83,7 @@ export const Form: FunctionComponent = () => {
         </InputWrapper>
         <InputWrapper>
           <Input
+            inputId="lastName"
             name="lastName"
             label="Last name"
             value={fields.lastName}
@@ -90,6 +92,7 @@ export const Form: FunctionComponent = () => {
         </InputWrapper>
         <InputWrapper>
           <Input
+            inputId="address"
             name="address"
             label="Address"
             value={fields.address}
@@ -98,6 +101,7 @@ export const Form: FunctionComponent = () => {
         </InputWrapper>
         <InputWrapper>
           <Input
+            inputId="ssn"
             name="ssn"
             label="SSN"
             value={fields.ssn}
