@@ -60,12 +60,13 @@ export const Form: FunctionComponent = () => {
     resetFields();
   };
 
+  const isValidString = (value: string) => value.length > 1;
   const isSSNValid = fields.ssn ? RegExp(SSN_REG_EXP).test(fields.ssn) : false;
 
   const isFormValid: boolean =
-    Boolean(fields.firstName) &&
-    Boolean(fields.lastName) &&
-    Boolean(fields.address) &&
+    isValidString(fields.firstName) &&
+    isValidString(fields.lastName) &&
+    isValidString(fields.address) &&
     isSSNValid;
 
   return (
@@ -115,6 +116,9 @@ export const Form: FunctionComponent = () => {
           </Button>
         </ButtonsContainer>
       </form>
+      {Boolean(postMemberMutation.error) && (
+        <div>Post error fetch: {JSON.stringify(postMemberMutation.error)}</div>
+      )}
     </Container>
   );
 };
